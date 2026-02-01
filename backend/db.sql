@@ -16,23 +16,12 @@ DROP TABLE IF EXISTS `news`;
 DROP TABLE IF EXISTS `clubs`;
 DROP TABLE IF EXISTS `users`;
 
+
+
+
 -- --------------------------------------------------------
 -- 6. Notifications (New System)
 -- --------------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS `notifications` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `type` enum('event_new', 'event_reminder', 'event_cancelled', 'general') NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `message` text NOT NULL,
-  `related_id` int(11) DEFAULT NULL,
-  `is_read` tinyint(1) DEFAULT 0,
-  `created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `notifications_user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 CREATE TABLE IF NOT EXISTS `clubs` (
@@ -73,6 +62,22 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   FOREIGN KEY (`club_id`) REFERENCES `clubs`(`id`) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE IF NOT EXISTS `notifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `type` enum('event_new', 'event_reminder', 'event_cancelled', 'general') NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `related_id` int(11) DEFAULT NULL,
+  `is_read` tinyint(1) DEFAULT 0,
+  `created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `notifications_user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 -- --------------------------------------------------------
 -- 3. Club Followers (New: Follow System)
