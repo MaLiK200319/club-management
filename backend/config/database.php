@@ -1,9 +1,10 @@
 <?php
 class Database {
-    private $host = "localhost";
-    private $db_name = "club_management";
-    private $username = "root";
-    private $password = "";
+    // InfinityFree Production Credentials
+    private $host = "sql113.infinityfree.com";
+    private $db_name = "if0_41047734_club_management";
+    private $username = "if0_41047734";
+    private $password = "qsdfghjklm123Q";
     public $conn;
 
     public function getConnection() {

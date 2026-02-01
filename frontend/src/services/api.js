@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-// Adjust baseURL if your WAMP configuration is different
-// Ensure 'backend' points to the folder containing index.php
+// Production API URL (InfinityFree)
 const api = axios.create({
-    baseURL: 'http://localhost/stage_raed/backend',
+    baseURL: 'https://club-managment.page.gd/backend',
     headers: {
         'Content-Type': 'application/json'
     }
