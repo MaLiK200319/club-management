@@ -1,0 +1,48 @@
+/* BitCard.css */
+.bit-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.bit-card.clickable:hover {
+    box-shadow: var(--shadow-hover);
+    cursor: pointer;
+}
+
+.bit-card-header {
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bit-card-title {
+    font-size: var(--font-h3);
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.bit-card-subtitle {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: var(--space-xs);
+}
+
+.bit-card-body {
+    padding: var(--space-lg);
+}
+
+.bit-card-footer {
+    padding: var(--space-md) var(--space-lg);
+    background-color: var(--bg-app);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+}

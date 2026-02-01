@@ -1,0 +1,108 @@
+/* Student Layout & Page Styles */
+
+/* 1. Layout Container */
+.st-layout {
+    min-height: 100vh;
+    padding-bottom: 80px;
+    /* Space for bottom nav */
+    background-color: var(--bg-app);
+}
+
+.st-content {
+    max-width: 600px;
+    /* Mobile-first focus */
+    margin: 0 auto;
+    padding: var(--space-md);
+}
+
+/* 2. Top Header (Desktop/Tablet mainly) */
+.st-header {
+    background: var(--bg-card);
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    box-shadow: var(--shadow-card);
+}
+
+.st-brand {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+/* 3. Bottom Navigation (The "Island") */
+.st-bottom-nav {
+    position: fixed;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-pill);
+    display: flex;
+    gap: var(--space-xs);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    width: auto;
+    min-width: 280px;
+    justify-content: space-between;
+}
+
+.st-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 64px;
+}
+
+.st-nav-item.active {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    /* Indigo shadow */
+}
+
+.st-nav-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.st-nav-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* 4. Page Utilities */
+.st-page-title {
+    font-size: var(--font-h2);
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.5px;
+}
+
+.st-section-title {
+    font-size: var(--font-h3);
+    font-weight: 700;
+    color: var(--text-main);
+    margin: var(--space-xl) 0 var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}

@@ -1,0 +1,17 @@
+# Backend/PHP
+vendor/
+.env
+uploads/
+*.log
+.vscode/
+
+# Frontend/Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/coverage/
+
+# Misc
+.DS_Store
+Thumbs.db

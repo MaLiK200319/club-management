@@ -1,0 +1,191 @@
+.admin-clubs-page {
+    padding: 3rem 0;
+    min-height: 100vh;
+    background: #f1f5f9;
+}
+
+.admin-header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.admin-header-main h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.admin-header-main p {
+    color: #64748b;
+}
+
+.admin-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.admin-filters button {
+    padding: 0.625rem 1.25rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 50px;
+    color: #64748b;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.admin-filters button.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.admin-table-container {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    text-align: left;
+    padding: 1.25rem;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.admin-table td {
+    padding: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.club-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.club-logo-mini {
+    width: 40px;
+    height: 40px;
+    background: #e2e8f0;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.club-name-link {
+    font-weight: 700;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.club-name-link:hover {
+    color: var(--color-accent);
+}
+
+.club-email-sm {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.cat-tag {
+    font-size: 0.75rem;
+    background: #f1f5f9;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.status-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.status-pill.active {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.status-pill.pending {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.status-pill.suspended {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.action-btns-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-approve-sm {
+    padding: 0.4rem 0.75rem;
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-suspend-sm {
+    padding: 0.4rem 0.75rem;
+    background: #f43f5e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-activate-sm {
+    padding: 0.4rem 0.75rem;
+    background: #0ea5e9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-delete-sm {
+    padding: 0.4rem 0.75rem;
+    background: #64748b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.admin-loading {
+    padding: 5rem;
+    text-align: center;
+    font-size: 1.25rem;
+}

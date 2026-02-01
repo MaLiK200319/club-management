@@ -1,0 +1,236 @@
+.manage-members-page {
+    padding: 3rem 0;
+    min-height: 100vh;
+    background: #f8fafc;
+}
+
+.manage-header {
+    margin-bottom: 3rem;
+}
+
+.btn-back {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.manage-header h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+}
+
+.manage-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.empty-msg {
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Manage Grid (Pending) */
+.manage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.manage-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.user-info-basic {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--color-accent) 0%, #fbbf24 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.user-info-basic h3 {
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+}
+
+.user-info-basic p {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.manage-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-approve {
+    flex: 1;
+    padding: 0.75rem;
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-approve:hover {
+    background: #16a34a;
+}
+
+.btn-reject {
+    flex: 1;
+    padding: 0.75rem;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-reject:hover {
+    background: #dc2626;
+}
+
+/* Manage Table (Members) */
+.manage-table-container {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.manage-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.manage-table th {
+    text-align: left;
+    padding: 1.25rem;
+    background: #f1f5f9;
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.manage-table td {
+    padding: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.member-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.avatar-xs {
+    width: 32px;
+    height: 32px;
+    background: #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.member-name {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.member-email {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.role-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.role-badge.admin {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.role-badge.moderator {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.role-badge.member {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.role-select {
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    background: white;
+    font-size: 0.875rem;
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-remove:hover {
+    text-decoration: underline;
+}
+
+.loading-container,
+.error-container {
+    padding: 5rem;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.error-container {
+    color: #ef4444;
+}

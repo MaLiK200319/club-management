@@ -1,0 +1,228 @@
+/* =====================================================
+   CLUB ADMIN DESIGN SYSTEM
+   Theme: Professional Teal (handled via data-theme="club-admin")
+   ===================================================== */
+
+/* 1. Layout & Responsive Structure */
+.ca-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bg-app);
+    isolation: isolate;
+    /* Create stacking context */
+}
+
+/* SIDEBAR - Desktop (Fixed) */
+.ca-sidebar {
+    width: 260px;
+    background: var(--color-primary);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 50;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.1);
+}
+
+/* MAIN CONTENT - Desktop (Offset) */
+.ca-main {
+    flex: 1;
+    margin-left: 260px;
+    /* Matches sidebar width */
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    /* Prevents flex overflow */
+    transition: margin-left 0.3s ease;
+}
+
+/* MOBILE LAYOUT (< 1024px) */
+@media (max-width: 1024px) {
+    .ca-sidebar {
+        transform: translateX(-100%);
+        /* Hide by default */
+    }
+
+    .ca-sidebar.open {
+        transform: translateX(0);
+        /* Slide in */
+    }
+
+    .ca-main {
+        margin-left: 0;
+        /* Full width */
+    }
+
+    /* Overlay for mobile drawer */
+    .ca-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 40;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+        backdrop-filter: blur(2px);
+    }
+
+    .ca-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+/* 2. Header & Top Bar */
+.ca-header {
+    height: 64px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-lg);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+
+.ca-mobile-toggle {
+    display: none;
+    /* Hidden on desktop */
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: var(--space-sm);
+    margin-right: var(--space-md);
+    border-radius: var(--radius-sm);
+}
+
+.ca-mobile-toggle:hover {
+    background: var(--bg-app);
+    color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+    .ca-mobile-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* 3. Sidebar Components */
+.ca-sidebar-header {
+    padding: var(--space-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ca-club-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.ca-club-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.15);
+    /* Glassy look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.ca-sidebar-nav {
+    flex: 1;
+    padding: var(--space-md) var(--space-sm);
+    overflow-y: auto;
+}
+
+.ca-nav-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-md);
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: var(--radius-md);
+    margin-bottom: 2px;
+}
+
+.ca-nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.ca-nav-item.active {
+    background: var(--color-primary-hover);
+    /* Slightly darker/lighter depending on theme */
+    color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ca-nav-icon {
+    width: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.ca-nav-label {
+    font-weight: 500;
+}
+
+/* 4. Content Styles */
+.ca-content {
+    padding: var(--space-lg);
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media(max-width: 768px) {
+    .ca-content {
+        padding: var(--space-md);
+    }
+
+    .ca-header {
+        padding: 0 var(--space-md);
+    }
+}
+
+/* 5. Enforcement Banners */
+.ca-enforcement-banner {
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    font-weight: 500;
+}
+
+.ca-enforcement-banner.restricted {
+    background: #FEF3C7;
+    color: #92400E;
+    border-bottom: 1px solid #FCD34D;
+}
+
+/* 6. Utility Overrides for Admin Specifics */
+.ca-header-title {
+    font-size: var(--font-h3);
+    font-weight: 600;
+}
+
+.ca-actions {
+    display: flex;
+    gap: var(--space-sm);
+}

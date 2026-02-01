@@ -1,0 +1,189 @@
+/* =====================================================
+   SUPER ADMIN DESIGN SYSTEM
+   Theme: Authority (Midnight Blue / Electric Indigo)
+   Handled via data-theme="super-admin"
+   ===================================================== */
+
+/* 1. Layout Structure */
+.sa-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--bg-app);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+}
+
+/* 2. Header (Authority Bar) */
+.sa-header {
+    background: var(--color-primary);
+    color: white;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Deeper shadow for elevation */
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.sa-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    letter-spacing: 0.5px;
+    color: white;
+    text-decoration: none;
+}
+
+.sa-brand-icon {
+    color: var(--color-accent);
+}
+
+/* Navigation - Desktop */
+.sa-nav {
+    display: flex;
+    gap: var(--space-xs);
+    margin-left: var(--space-2xl);
+    flex: 1;
+}
+
+.sa-nav-item {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.sa-nav-item:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sa-nav-item.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.sa-user-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+/* Mobile Toggle */
+.sa-mobile-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: var(--space-sm);
+}
+
+/* Mobile Responsive Navigation */
+@media (max-width: 768px) {
+    .sa-header {
+        padding: 0 var(--space-md);
+    }
+
+    .sa-mobile-toggle {
+        display: block;
+    }
+
+    .sa-nav {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--color-primary);
+        flex-direction: column;
+        padding: var(--space-md);
+        margin: 0;
+        gap: var(--space-sm);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 40;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .sa-nav.open {
+        transform: translateY(0);
+    }
+
+    /* Hide user menu on mobile or move it into sa-nav logic if needed, 
+       but for simplicity we'll keep logout in sa-nav for mobile */
+    .sa-user-menu {
+        display: none;
+    }
+}
+
+/* 3. Container & Page Structure */
+.sa-container {
+    padding: var(--space-xl);
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .sa-container {
+        padding: var(--space-md);
+    }
+}
+
+.sa-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--space-xl);
+    border-bottom: 2px solid var(--border-light);
+    padding-bottom: var(--space-lg);
+}
+
+.sa-page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.sa-page-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-top: var(--space-xs);
+}
+
+/* 4. Stats Grid */
+.sa-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+/* 5. Utility Badges for Admin Statuses */
+.sa-badge-sensitive {
+    background: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FCA5A5;
+}
+
+.sa-badge-stable {
+    background: #DCFCE7;
+    color: #166534;
+    border: 1px solid #86EFAC;
+}

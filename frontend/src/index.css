@@ -1,0 +1,165 @@
+/* =========================================
+   GLOBAL DESIGN SYSTEM (The Core)
+   ========================================= */
+
+:root {
+    /* 1. Brand Core (Neutral Foundation) */
+    --bg-app: #F8FAFC;
+    /* Light Blue-Grey */
+    --bg-card: #FFFFFF;
+    /* White */
+    --text-main: #0F172A;
+    /* Slate 900 */
+    --text-muted: #64748B;
+    /* Slate 500 */
+    --border-light: #E2E8F0;
+    /* Slate 200 */
+
+    /* 2. Semantic Actions */
+    --color-success: #22C55E;
+    /* Green 500 */
+    --color-warning: #F59E0B;
+    /* Amber 500 */
+    --color-danger: #EF4444;
+    /* Red 500 */
+    --color-info: #3B82F6;
+    /* Blue 500 */
+
+    /* 3. Spacing System (4px Base) */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+
+    /* 4. UI Properties */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    /* Standard Card Radius */
+    --radius-pill: 9999px;
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+    /* 5. Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-h1: 2rem;
+    /* 32px */
+    --font-h2: 1.5rem;
+    /* 24px */
+    --font-h3: 1.25rem;
+    /* 20px */
+}
+
+/* =========================================
+   ROLE THEMES (Scoped overrides)
+   ========================================= */
+
+/* Student: Vibrant & Geometric */
+body[data-theme="student"] {
+    --color-primary: #4F46E5;
+    /* Indigo */
+    --color-primary-hover: #4338ca;
+    --color-accent: #818CF8;
+}
+
+/* Club Admin: Professional & Dense */
+body[data-theme="club-admin"] {
+    --color-primary: #1E3A5F;
+    /* Deep Blue */
+    --color-primary-hover: #1A365D;
+    --color-accent: #2DD4BF;
+    /* Teal */
+}
+
+/* Super Admin: Authoritative & Alert */
+body[data-theme="super-admin"] {
+    --color-primary: #1e1b4b;
+    /* Midnight */
+    --color-primary-hover: #312e81;
+    --color-accent: #6366f1;
+    /* Indigo */
+}
+
+/* Default Fallback (Authentication / Public) */
+body {
+    --color-primary: #2563EB;
+    --color-primary-hover: #1d4ed8;
+    --color-accent: #60A5FA;
+}
+
+/* =========================================
+   BASE RESET
+   ========================================= */
+
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* =========================================
+   COMMON UTILITIES
+   ========================================= */
+.bit-input-group {
+    position: relative;
+    width: 100%;
+}
+
+.bit-input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.bit-input-field {
+    width: 100%;
+    padding: 10px 12px 10px 40px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    outline: none;
+    transition: all 0.2s;
+    background: var(--bg-card);
+    color: var(--text-main);
+}
+
+.bit-input-field:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
